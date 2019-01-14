@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TweetService } from './services/tweet.service';
 import { Marker } from './models/marker.model';
+import { WebsocketService } from './services/websocket.service';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +13,11 @@ export class AppComponent {
   lat = 14.5675261;
   zoom = 10;
   markers: Array<Marker> = new Array<Marker>();
-  constructor(private tweetService: TweetService) {
+  constructor(private wsService: WebsocketService) {
   }
 
   ngOnInit() {
-    this.tweetService.tweets.subscribe(data => {
+    this.wsService.connect().subscribe(data => {
       if (data.tweet.coordinates) {
         const tweet = data.tweet;
         const marker = new Marker({

@@ -6,7 +6,6 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { WebsocketService } from './services/websocket.service';
-import { TweetService } from './services/tweet.service';
 import { MatToolbarModule, MatCardModule } from '@angular/material';
 
 import { environment } from '../environments/environment';
@@ -22,7 +21,7 @@ import { environment } from '../environments/environment';
       apiKey: environment.google_map_key
     })
   ],
-  providers: [WebsocketService, TweetService],
+  providers: [WebsocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
