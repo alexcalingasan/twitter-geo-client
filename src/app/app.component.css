@@ -1,0 +1,13 @@
+agm-map {
+  height: 550px;
+}
+
+.mat-toolbar {
+  color: rgb(255, 255, 255);
+  background-color: indigo;
+}
+
+.geo-card {
+  max-height: 550px;
+  padding: 0px;
+}
