@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
 import { Observable } from 'rxjs/Observable';
-import * as Rx from 'rxjs/Rx';
 import { environment } from '../../environments/environment';
 
 @Injectable()
@@ -11,7 +10,7 @@ export class WebsocketService {
 
   constructor() { }
 
-  connect(): Rx.Observable<any> {
+  connect(): Observable<any> {
     this.socket = io(environment.ws_url);
 
     const observable = new Observable(observer => {
